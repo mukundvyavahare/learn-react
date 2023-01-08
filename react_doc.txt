@@ -1,0 +1,40 @@
+import logo from './logo.svg';
+// import './App.css';
+import React from 'react';
+
+class App extends React.Component {
+
+  render() {
+      let isLoggedIn = false
+
+      let success = {
+        color: 'green',
+        backgroundColor: 'cyan'
+      }
+      let fail = {
+        color: 'red',
+        backgroundColor: 'cyan'
+      }
+
+    if(isLoggedIn) {
+      return (<h2 style={success}>Welcome Admin</h2>);
+    } else {
+      return (<h2 style={fail}>Please Login</h2>);
+    }
+   
+  }
+}
+
+export default App;
+
+// Product
+  let count = 5;
+      let product = 1;
+    
+      for (let index = 1; index <= count; index++) {
+        product = index * count;
+        
+        
+      }
+      return (<h2>{product}</h2>);
+   
