@@ -1,25 +1,48 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Welcome to React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+
+     let employees= [
+    {empId:1234, name:'John', designation:'SPM', salary:'17000'},
+    {empId:2222, name:'Jack', designation:'TL', salary:'20000'}
+    
+  ];
+ 
+  return (<React.Fragment>
+    <table style={{width: '60%'}} className='table'>
+      <thead className='thread-light'>
+      <tr>
+        <th>Emp Id</th>
+        <th>Emp Name</th>
+        <th>Designation</th>
+      </tr>
+      </thead>
+      <tbody>
+        { employees.map(employee => {
+          return employee.salary > 17000 ? (<tr key={employee.empId}>
+            <td>{employee.empId}</td>
+            <td>{employee.name}</td>
+            <td>{employee.designation}</td>
+          </tr>) : null
+        })
+
+        }
+      </tbody>
+
+    </table>
+    
+  </React.Fragment>
+     
+     
+    )
+ 
+      
+   
+   
+  }
 }
 
 export default App;
